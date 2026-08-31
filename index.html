@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Макеты — проверка канала</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 6vh 5vw;
+    font: 17px/1.6 -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #fbfaf8; color: #1e1c1a;
+  }
+  main { max-width: 40rem; margin: 0 auto; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .6rem; letter-spacing: -.01em; }
+  p { margin: 0 0 1rem; }
+  .metka {
+    display: inline-block; margin-bottom: 1.6rem; padding: .35rem .7rem;
+    border-radius: 999px; background: #e8f0e6; color: #2f5d3a;
+    font-size: .85rem; font-weight: 600; letter-spacing: .02em;
+  }
+  ul { padding-left: 1.1rem; margin: 0 0 1.4rem; }
+  li { margin-bottom: .4rem; }
+  .tihoe { color: #6c655e; font-size: .92rem; }
+  code { background: #efece7; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #171614; color: #eae7e2; }
+    .metka { background: #23372a; color: #a9d7b4; }
+    .tihoe { color: #a49d95; }
+    code { background: #262421; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <span class="metka">СТРАНИЦА ОТКРЫЛАСЬ</span>
+
+  <h1>Проверка канала: открывается ли github.io из России</h1>
+
+  <p>Если вы это читаете — адрес <code>*.github.io</code> доступен из вашей сети.
+  Значит на нём можно показывать макеты сайтов клиентам.</p>
+
+  <p>Что проверить, чтобы результат чего-то стоил:</p>
+
+  <ul>
+    <li><b>без VPN</b> — иначе проверяется чужая страна, а не Россия;</li>
+    <li><b>с телефона по мобильной сети</b> — второй независимый канал, другой провайдер;</li>
+    <li>желательно ещё раз через сутки — блокировки бывают плавающими.</li>
+  </ul>
+
+  <p class="tihoe">Страница-проба, собрана 31 августа 2026 года.
+  Дальше на этом же месте будут лежать макеты главных страниц:
+  по папке на клиента и оглавление здесь.</p>
+</main>
+</body>
+</html>

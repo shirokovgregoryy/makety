@@ -129,12 +129,7 @@ h1 {
   font-family: 'Oswald', 'PT Sans Narrow', sans-serif;
   font-size: 19px; display: block; color: #191715; font-weight: 600;
 }
-.geroy-foto { position: relative; }
-.geroy-foto::before {
-  content: ''; position: absolute; inset: 18px -18px -18px 18px;
-  background: #2e2019; z-index: 0;
-}
-.geroy-foto .slot { position: relative; z-index: 1; height: 440px; }
+.geroy-foto .slot { height: 440px; }
 
 /* ── заглушки под фото ────────────────────────────────────────── */
 .slot {
@@ -424,7 +419,6 @@ h1 {
   .lid { font-size: 16px; }
   .knopka { font-size: 15px; padding: 14px 22px; }
   .geroy-knopki { gap: 16px; }
-  .geroy-foto::before { inset: 12px -12px -12px 12px; }
   .geroy-foto .slot { height: 230px; }
   .fakty { gap: 18px; flex-direction: column; margin-top: 32px; }
 

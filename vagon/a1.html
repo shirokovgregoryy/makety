@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F4EF;color:#14161A;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#14161A}a:hover{color:#8A6A00}
+*{box-sizing:border-box}
+input,select,textarea,button{font-family:inherit}
+:focus-visible{outline:3px solid #F5C400;outline-offset:2px}
+</style>
+</helmet>
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;gap:6px;padding:6px;background:#14161A;color:#fff;font-size:12px;line-height:1;font-weight:600">
+  <span style="opacity:.55;align-self:center">Макет</span>
+  <a href="./" style="color:#fff;padding:5px 10px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.3)">A · Базовый</a>
+  <a href="a1.html" style="color:#14161A;background:#fff;padding:5px 10px;border-radius:999px;text-decoration:none">A1 · Навигатор</a>
+</div>
+
+<header style="position:sticky;top:29px;z-index:40;background:rgba(246,244,239,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(20,22,26,.1);margin-top:29px">
+  <div style="max-width:1200px;margin:0 auto;padding:12px 32px;min-height:72px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+    <a href="#top" onClick="{{ goTop }}" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#14161A"/><path d="M7 21a10 10 0 0 1 20 0" fill="none" stroke="#F5C400" stroke-width="2.5" stroke-linecap="round"/><path d="M17 21 23 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="17" cy="21" r="2" fill="#fff"/></svg>
+      <span style="font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em">Вагон</span>
+    </a>
+    <span style="font-size:13px;font-weight:600;color:#5B6068;white-space:nowrap">Сервис VAG · Хрустальная ул., 31Ж</span>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+      <span style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#3D424B;white-space:nowrap"><span style="width:8px;height:8px;border-radius:50%;background:{{ statusColor }}"></span>{{ statusText }}</span>
+      <a href="tel:+78120000000" style="text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap">+7 (812) 000-00-00</a>
+      <button type="button" onClick="{{ openBooking }}" style="background:#14161A;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap" style-hover="background:#2A2E36">Записаться</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section data-screen-label="Навигатор" style="max-width:1200px;margin:0 auto;padding:64px 32px 72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;align-items:start">
+  <div style="position:sticky;top:130px">
+    <p style="margin:0 0 20px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5B6068">Volkswagen · Audi · Škoda · Seat · Санкт-Петербург</p>
+    <h1 style="margin:0 0 22px;font-family:Unbounded,sans-serif;font-weight:700;font-size:48px;line-height:1.08;letter-spacing:-.02em;text-wrap:balance">Скажите, что не так, — назовём цену до приезда</h1>
+    <p style="margin:0 0 28px;font-size:18px;line-height:1.55;color:#3D424B;text-wrap:pretty">Три клика справа — и вы видите, какая работа обычно нужна, сколько она стоит и займёт. Это ориентир, точную сумму фиксируем после диагностики и не меняем без вашего согласия.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:20px 28px">
+      <a href="https://yandex.ru/maps/org/38373506090" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;gap:2px"><span style="font-family:Unbounded,sans-serif;font-weight:700;font-size:26px">4,7 <span style="color:#E0A800;font-size:18px">★</span></span><span style="font-size:13px;font-weight:600;color:#5B6068">82 отзыва на Яндекс Картах →</span></a>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:Unbounded,sans-serif;font-weight:700;font-size:26px">6 мес</span><span style="font-size:13px;font-weight:600;color:#5B6068">гарантия в заказ-наряде</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:Unbounded,sans-serif;font-weight:700;font-size:26px">10–21</span><span style="font-size:13px;font-weight:600;color:#5B6068">пн–сб, без обеда</span></div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:24px;box-shadow:0 10px 40px rgba(20,22,26,.08)">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;background:#14161A;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">1</span><span style="font-size:15px;font-weight:800">Какая машина?</span></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ brandChips }}" as="c" hint-placeholder-count="5">
+          <button type="button" onClick="{{ setBrand }}" data-brand="{{ c.name }}" aria-pressed="{{ c.on }}" style="border-radius:999px;padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer;border:1.5px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }}">{{ c.name }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;background:#14161A;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">2</span><span style="font-size:15px;font-weight:800">Что беспокоит?</span></div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
+        <sc-for list="{{ symptomChips }}" as="c" hint-placeholder-count="8">
+          <button type="button" onClick="{{ setSymptom }}" data-i="{{ $index }}" aria-pressed="{{ c.on }}" style="text-align:left;border-radius:12px;padding:12px 14px;font-weight:700;font-size:14px;cursor:pointer;border:1.5px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};display:flex;flex-direction:column;gap:2px"><span>{{ c.label }}</span><span style="font-size:12px;font-weight:600;opacity:.65">{{ c.hint }}</span></button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(20,22,26,.08);padding-top:20px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;background:#F5C400;color:#14161A;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">3</span><span style="font-size:15px;font-weight:800">{{ resultTitle }}</span></div>
+      <sc-if value="{{ hasResult }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ matched }}" as="s" hint-placeholder-count="2">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;background:#F6F4EF;border-radius:12px;padding:14px 16px">
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:15px;font-weight:800">{{ s.name }}</span><span style="font-size:13px;color:#5B6068;font-weight:600">{{ s.time }} · {{ s.desc }}</span></div>
+              <span style="font-family:Unbounded,sans-serif;font-weight:600;font-size:16px;white-space:nowrap">{{ s.price }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#5B6068">{{ resultNote }}</p>
+        <button type="button" onClick="{{ openBooking }}" style="background:#F5C400;color:#14161A;border:0;border-radius:12px;padding:16px 24px;font-weight:800;font-size:16px;cursor:pointer" style-hover="background:#E8B900">{{ ctaText }}</button>
+      </sc-if>
+      <sc-if value="{{ noResult }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-size:14px;line-height:1.5;color:#5B6068">Выберите симптом — покажем подходящие работы с ценой «от» и сроком. Или сразу <a href="#" onClick="{{ openBooking }}" style="font-weight:700">оставьте заявку</a>.</p>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Как проходит ремонт" style="background:#fff;border-top:1px solid rgba(20,22,26,.08);border-bottom:1px solid rgba(20,22,26,.08)">
+  <div style="max-width:1200px;margin:0 auto;padding:72px 32px">
+    <h2 style="margin:0 0 40px;font-family:Unbounded,sans-serif;font-weight:700;font-size:34px;letter-spacing:-.02em">От звонка до ключей — четыре шага</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;position:relative">
+      <div aria-hidden="true" style="position:absolute;left:24px;right:24px;top:22px;height:2px;background:rgba(20,22,26,.1)"></div>
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px;position:relative">
+          <span style="width:46px;height:46px;border-radius:50%;background:#F5C400;border:4px solid #fff;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px">{{ st.n }}</span>
+          <span style="font-size:19px;font-weight:800">{{ st.title }}</span>
+          <span style="font-size:15px;line-height:1.55;color:#3D424B">{{ st.text }}</span>
+          <span style="font-size:13px;font-weight:700;color:#5B6068">{{ st.time }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Работы" style="max-width:1200px;margin:0 auto;padding:80px 32px 40px;display:flex;flex-direction:column;gap:56px">
+  <div>
+    <h2 style="margin:0 0 10px;font-family:Unbounded,sans-serif;font-weight:700;font-size:34px;letter-spacing:-.02em">Три истории из цеха</h2>
+    <p style="margin:0;font-size:16px;color:#3D424B;max-width:560px">Что приехало, что нашли, что сделали и во сколько это обошлось. Фото узлов, а не помещения.</p>
+  </div>
+  <sc-for list="{{ cases }}" as="w" hint-placeholder-count="3">
+    <article style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:center;direction:{{ w.dir }}">
+      <div style="aspect-ratio:4/3;border-radius:20px;background:repeating-linear-gradient(135deg,#E6E2D8 0 12px,#DDD8CC 12px 24px);display:flex;align-items:flex-start;padding:16px;direction:ltr"><span style="font-size:12px;font-weight:700;color:#5B6068;background:rgba(255,255,255,.85);padding:5px 9px;border-radius:6px">{{ w.tag }}</span></div>
+      <div style="display:flex;flex-direction:column;gap:14px;direction:ltr">
+        <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5B6068">{{ w.car }}</span>
+        <h3 style="margin:0;font-family:Unbounded,sans-serif;font-weight:600;font-size:24px;line-height:1.2">{{ w.title }}</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#3D424B">{{ w.story }}</p>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;padding-top:6px">
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:700;color:#5B6068;text-transform:uppercase;letter-spacing:.06em">Срок</span><span style="font-weight:800;font-size:16px">{{ w.time }}</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:700;color:#5B6068;text-transform:uppercase;letter-spacing:.06em">Итог</span><span style="font-weight:800;font-size:16px">{{ w.cost }}</span></div>
+        </div>
+      </div>
+    </article>
+  </sc-for>
+</section>
+
+<section data-screen-label="Отзывы" style="max-width:1200px;margin:0 auto;padding:56px 32px 80px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:start">
+  <div style="background:#14161A;color:#fff;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:20px">
+    <span style="color:#F5C400;font-size:16px;letter-spacing:3px">★★★★★</span>
+    <blockquote style="margin:0;font-family:Unbounded,sans-serif;font-weight:500;font-size:24px;line-height:1.35;text-wrap:balance">«{{ featured.text }}»</blockquote>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px"><span style="font-weight:800">{{ featured.name }} · {{ featured.car }}</span><span style="opacity:.6;font-weight:600">{{ featured.date }}</span></div>
+    <a href="https://yandex.ru/maps/org/38373506090" target="_blank" rel="noopener" style="color:#F5C400;font-weight:700;font-size:14px;text-decoration:none;align-self:flex-start">4,7 из 5 · все 82 отзыва на Яндекс Картах ↗</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <sc-for list="{{ others }}" as="r" hint-placeholder-count="3">
+      <article style="background:#fff;border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:#5B6068"><span style="color:#14161A;font-weight:800">{{ r.name }} · {{ r.car }}</span><span>{{ r.date }}</span></div>
+        <p style="margin:0;font-size:15px;line-height:1.55">{{ r.text }}</p>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Как доехать" style="position:relative;background:#E9ECE6;min-height:560px;overflow:hidden" aria-label="Карта: Хрустальная улица, 31Ж">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(20,22,26,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(20,22,26,.06) 1px,transparent 1px);background-size:48px 48px"></div>
+  <div aria-hidden="true" style="position:absolute;left:30%;right:0;top:42%;height:34px;background:#fff;transform:rotate(-6deg)"></div>
+  <div aria-hidden="true" style="position:absolute;left:68%;top:0;bottom:0;width:26px;background:#fff;transform:rotate(12deg)"></div>
+  <div style="position:absolute;left:70%;top:44%;display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:46px;height:46px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#F5C400;border:4px solid #14161A"></div><span style="background:#14161A;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;border-radius:8px">Вагон · Хрустальная, 31Ж</span></div>
+  <span style="position:absolute;bottom:16px;right:16px;font-size:12px;font-weight:700;color:#5B6068;background:rgba(255,255,255,.85);padding:5px 9px;border-radius:6px">Здесь встраивается Яндекс Карта</span>
+  <div style="position:relative;max-width:1200px;margin:0 auto;padding:56px 32px">
+    <div style="background:#fff;border-radius:20px;padding:32px;max-width:520px;display:flex;flex-direction:column;gap:22px;box-shadow:0 10px 40px rgba(20,22,26,.12)">
+      <div><h2 style="margin:0 0 8px;font-family:Unbounded,sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em">Как доехать</h2><p style="margin:0;font-size:20px;font-weight:800">Хрустальная ул., 31Ж</p><p style="margin:8px 0 0;font-size:15px;line-height:1.55;color:#3D424B">Промзона за Обводным каналом. Ориентир — вывеска «Мастерская BMW» слева от въезда; наши ворота третьи справа, с жёлтой табличкой. Звоните с проходной — откроем.</p></div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:15px;padding:14px 0;border-top:1px solid rgba(20,22,26,.08);border-bottom:1px solid rgba(20,22,26,.08)">
+        <span style="color:#5B6068;font-weight:600">Пн – сб</span><span style="font-weight:700">10:00 – 21:00</span>
+        <span style="color:#5B6068;font-weight:600">Воскресенье</span><span style="font-weight:700">выходной</span>
+        <span style="color:#5B6068;font-weight:600">От метро</span><span>Елизаровская — 25 мин пешком, автобус № 8 — 8 мин</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://yandex.ru/maps/?rtext=~59.9,30.4&rtt=auto" target="_blank" rel="noopener" style="text-decoration:none;background:#F5C400;color:#14161A;border-radius:12px;padding:14px 20px;font-weight:800;font-size:15px" style-hover="background:#E8B900">Маршрут на машине</a>
+        <a href="tel:+78120000000" style="text-decoration:none;border:1.5px solid rgba(20,22,26,.18);border-radius:12px;padding:14px 20px;font-weight:700;font-size:15px" style-hover="border-color:#14161A">+7 (812) 000-00-00</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <a href="https://t.me/" target="_blank" rel="noopener" style="text-decoration:none;font-size:14px;font-weight:700;padding:9px 14px;border-radius:999px;background:#F6F4EF">Telegram</a>
+        <a href="https://wa.me/78120000000" target="_blank" rel="noopener" style="text-decoration:none;font-size:14px;font-weight:700;padding:9px 14px;border-radius:999px;background:#F6F4EF">WhatsApp</a>
+        <a href="mailto:info@vagon-service.ru" style="text-decoration:none;font-size:14px;font-weight:700;padding:9px 14px;border-radius:999px;background:#F6F4EF">info@vagon-service.ru</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer style="border-top:1px solid rgba(20,22,26,.1)">
+  <div style="max-width:1200px;margin:0 auto;padding:36px 32px 48px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px;font-size:13px;color:#3D424B;line-height:1.6">
+    <div style="display:flex;flex-direction:column;gap:6px"><span style="font-weight:800;color:#14161A;font-size:14px">ООО «АС-ГРУПП»</span><span>ИНН 7800000000 · ОГРН 1177800000000</span><span>192019, Санкт-Петербург, Хрустальная ул., д. 31, лит. Ж</span><span>Пн–сб 10:00–21:00, вс — выходной</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><a href="#" onClick="{{ openPrivacy }}" style="text-decoration:none;font-weight:600">Политика обработки персональных данных</a><a href="#" onClick="{{ openPrivacy }}" style="text-decoration:none;font-weight:600">Согласие на обработку данных</a><a href="#" style="text-decoration:none;font-weight:600">Гарантийные условия и образец заказ-наряда</a></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><span>Не является публичной офертой. Цены — нижняя граница, итог по результатам диагностики.</span><span>Volkswagen, Audi, Škoda, Seat — товарные знаки правообладателей; сервис независимый.</span></div>
+  </div>
+</footer>
+
+<sc-if value="{{ cookieVisible }}" hint-placeholder-val="{{ false }}">
+  <div role="region" aria-label="Уведомление о куках" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:60;display:flex;justify-content:center">
+    <div style="background:#14161A;color:#fff;border-radius:14px;padding:14px 16px 14px 20px;display:flex;align-items:center;gap:20px;max-width:760px;box-shadow:0 12px 40px rgba(20,22,26,.25)">
+      <p style="margin:0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.85)">Используем куки и Яндекс Метрику. Подробнее — в <a href="#" onClick="{{ openPrivacy }}" style="color:#F5C400">политике</a>.</p>
+      <button type="button" onClick="{{ acceptCookies }}" style="background:#F5C400;color:#14161A;border:0;border-radius:9px;padding:10px 16px;font-weight:800;font-size:13px;cursor:pointer;white-space:nowrap">Соглашаюсь</button>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ bookingOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="Заявка на ремонт" style="position:fixed;inset:0;z-index:70;background:rgba(20,22,26,.55);display:flex;align-items:center;justify-content:center;padding:24px" onClick="{{ closeBooking }}">
+    <div style="background:#fff;border-radius:20px;width:100%;max-width:520px;padding:32px;position:relative;max-height:92vh;overflow:auto" onClick="{{ stop }}">
+      <button type="button" onClick="{{ closeBooking }}" aria-label="Закрыть" style="position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:#F6F4EF;font-size:20px;cursor:pointer">×</button>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px;padding:12px 0">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F5C400;display:flex;align-items:center;justify-content:center;font-size:26px">✓</span>
+          <h3 style="margin:0;font-family:Unbounded,sans-serif;font-weight:700;font-size:24px">Заявка принята</h3>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#3D424B">{{ sentMsg }}</p>
+          <button type="button" onClick="{{ closeBooking }}" style="align-self:flex-start;background:#14161A;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:700;cursor:pointer">Готово</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submitBooking }}" style="display:flex;flex-direction:column;gap:16px">
+          <div><h3 style="margin:0 0 6px;font-family:Unbounded,sans-serif;font-weight:700;font-size:24px">Записаться</h3><p style="margin:0;font-size:14px;color:#5B6068">{{ formSubtitle }}</p></div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;min-width:0"><span>Имя</span><input required name="name" placeholder="Как к вам обращаться" style="border:1.5px solid rgba(20,22,26,.18);border-radius:10px;padding:12px 14px;font-size:15px;width:100%;min-width:0"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;min-width:0"><span>Телефон</span><input required name="phone" type="tel" placeholder="+7 (___) ___-__-__" style="border:1.5px solid rgba(20,22,26,.18);border-radius:10px;padding:12px 14px;font-size:15px;width:100%;min-width:0"></label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700"><span>Комментарий <span style="color:#5B6068;font-weight:600">(необязательно)</span></span><textarea name="comment" rows="3" placeholder="Модель, год, мотор, когда удобно приехать" style="border:1.5px solid rgba(20,22,26,.18);border-radius:10px;padding:12px 14px;font-size:15px;resize:vertical;width:100%"></textarea></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#3D424B"><input required type="checkbox" name="consent" style="margin-top:3px;width:16px;height:16px"><span>Согласен на обработку персональных данных ООО «АС-ГРУПП» на условиях <a href="#" onClick="{{ openPrivacy }}">политики</a>.</span></label>
+          <button type="submit" style="background:#F5C400;color:#14161A;border:0;border-radius:12px;padding:16px;font-weight:800;font-size:16px;cursor:pointer" style-hover="background:#E8B900">Отправить заявку</button>
+          <p style="margin:0;font-size:13px;color:#5B6068;text-align:center">Или сразу позвоните: <a href="tel:+78120000000" style="font-weight:700">+7 (812) 000-00-00</a></p>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ privacyOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="Политика обработки персональных данных" style="position:fixed;inset:0;z-index:80;background:rgba(20,22,26,.55);display:flex;align-items:center;justify-content:center;padding:24px" onClick="{{ closePrivacy }}">
+    <div style="background:#fff;border-radius:20px;width:100%;max-width:640px;padding:32px;position:relative;max-height:88vh;overflow:auto" onClick="{{ stop }}">
+      <button type="button" onClick="{{ closePrivacy }}" aria-label="Закрыть" style="position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:#F6F4EF;font-size:20px;cursor:pointer">×</button>
+      <h3 style="margin:0 0 14px;font-family:Unbounded,sans-serif;font-weight:700;font-size:22px">Политика обработки персональных данных</h3>
+      <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#3D424B">Оператор: ООО «АС-ГРУПП», ИНН 7800000000, ОГРН 1177800000000, 192019, Санкт-Петербург, Хрустальная ул., 31Ж. Обрабатываем имя, телефон и сведения об автомобиле из заявки — только для связи и оказания услуг. Хранение — до отзыва согласия; отзыв — письмом на info@vagon-service.ru.</p>
+      <p style="margin:0;font-size:13px;line-height:1.6;color:#5B6068">На сайте используется Яндекс Метрика (cookie-идентификаторы). Полный текст готовит юрист.</p>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;openState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;open&quot;,&quot;closed&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;'auto'|'open'|'closed'&quot;,&quot;section&quot;:&quot;Состояние&quot;},&quot;showCookieBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Состояние&quot;}}">
+class Component extends DCLogic {
+  state = { bookingOpen:false, privacyOpen:false, sent:false, cookie:false, brand:'', symptom:-1, now:new Date() };
+  services = {
+    diag:{name:'Компьютерная диагностика', price:'от 1 500 ₽', time:'~1 час', desc:'дилерский сканер, все блоки'},
+    to:{name:'Техническое обслуживание', price:'от 4 500 ₽', time:'2–3 часа', desc:'масло, фильтры, свечи по регламенту'},
+    dsg:{name:'Диагностика и ремонт DSG/АКПП', price:'от 12 000 ₽', time:'1–3 дня', desc:'мехатроник, сцепления, гидроблок'},
+    eng:{name:'Ремонт двигателя', price:'от 8 000 ₽', time:'от 1 дня', desc:'цепь ГРМ, колпачки, турбина'},
+    oil:{name:'Диагностика расхода масла TSI/TFSI', price:'от 2 500 ₽', time:'~2 часа', desc:'эндоскоп, замер компрессии'},
+    susp:{name:'Подвеска и рулевое', price:'от 2 500 ₽', time:'2–4 часа', desc:'рычаги, сайлентблоки, амортизаторы'},
+    brakes:{name:'Тормозная система', price:'от 2 000 ₽', time:'1–2 часа', desc:'колодки, диски, прокачка'},
+    el:{name:'Электрика и электроника', price:'от 2 000 ₽', time:'от 1 часа', desc:'утечки тока, датчики, кодирование'},
+    tdi:{name:'Дизель TDI', price:'от 3 000 ₽', time:'от 2 часов', desc:'форсунки, ТНВД, сажевый фильтр'}
+  };
+  symptoms = [
+    {label:'Дёргается или пинается коробка', hint:'DSG, АКПП', keys:['diag','dsg'], note:'В 6 случаях из 10 ремонт мехатроника обходится дешевле замены. Сначала — диагностика коробки, она входит в стоимость ремонта.'},
+    {label:'Ест масло', hint:'TSI / TFSI', keys:['oil','eng'], note:'Замер расхода и эндоскопия цилиндров покажут, колпачки это или кольца. Объём работ согласуем после разборки.'},
+    {label:'Горит Check Engine', hint:'или другая лампа', keys:['diag'], note:'Читаем ошибки по всем блокам и говорим, ехать ли дальше. Диагностика засчитывается в ремонт у нас.'},
+    {label:'Стук, гул, увод в сторону', hint:'подвеска, рулевое', keys:['susp','brakes'], note:'Осмотр на подъёмнике — 30 минут. Меняем только то, что действительно изношено, снятые детали отдаём.'},
+    {label:'Скрип или вибрация при торможении', hint:'тормоза', keys:['brakes'], note:'Электронный ручник обслуживаем сканером. Колодки и диски — оригинал или аналог на выбор.'},
+    {label:'Пора на ТО', hint:'по пробегу или году', keys:['to'], note:'Регламент под вашу модель и мотор. Скажем, что действительно пора менять, а что ещё походит.'},
+    {label:'Электрика: не заводится, садится АКБ', hint:'утечки, датчики', keys:['el','diag'], note:'Ищем утечку тока и кодируем блоки после замены. Часто вопрос решается за один визит.'},
+    {label:'Дизель: дымит, троит, тяга пропала', hint:'TDI', keys:['tdi','diag'], note:'Форсунки проверяем на стенде, сажевый фильтр — по давлению. Без замены «на глаз».'}
+  ];
+  steps = [
+    {n:'1', title:'Заявка', text:'Телефон, сайт или мессенджер. Перезваниваем и назначаем время.', time:'в рабочий час'},
+    {n:'2', title:'Диагностика', text:'Сканер и подъёмник. Показываем, что нашли, на машине и на экране.', time:'~1 час'},
+    {n:'3', title:'Смета', text:'Перечень работ и запчастей с ценами. Без вашего согласия не добавляем ничего.', time:'до начала работ'},
+    {n:'4', title:'Ремонт и отчёт', text:'Фото этапов в мессенджер, снятые детали отдаём, гарантия в заказ-наряде.', time:'6 мес гарантии'}
+  ];
+  cases = [
+    {dir:'ltr', tag:'До / после', car:'Škoda Octavia A7 · DSG-7', title:'Мехатроник: ремонт вместо замены', story:'Приехала с рывками на 2-й передаче и двумя предложениями «менять целиком». Диагностика показала износ одного клапана — заменили клапан и прошили адаптации.', time:'1 день', cost:'~60 000 ₽ экономии'},
+    {dir:'rtl', tag:'Фото узла', car:'Audi A4 B8 · 2.0 TFSI', title:'Цепь ГРМ с вытянутыми звеньями', story:'Дизель-стук на холодную. Замер растяжения подтвердил цепь на пределе. Заменили комплект с натяжителем и фазовращателем, показали старую цепь рядом с новой.', time:'2 дня', cost:'по смете, без доплат'},
+    {dir:'ltr', tag:'В процессе', car:'Volkswagen Tiguan · 2.0 TSI', title:'Турбина: картридж, а не вся турбина', story:'Свист и падение тяги. Вал картриджа имел люфт; корпус целый. Заменили картридж, промыли интеркулер, проверили давление на тесте.', time:'1 день', cost:'в 2 раза дешевле новой'}
+  ];
+  reviews = [
+    {name:'Александр', car:'Škoda Octavia A7', date:'14 августа 2026', text:'В двух местах предлагали менять мехатроник целиком. Здесь продиагностировали и починили — вышло в три раза дешевле. Смету прислали до работ.'},
+    {name:'Марина', car:'Volkswagen Polo', date:'2 июля 2026', text:'Показали старые фильтры и объяснили, что колодки ещё походят. Не навязывали лишнего.'},
+    {name:'Денис', car:'Audi A6 C7', date:'19 мая 2026', text:'Самый ответственный сервис для VAG, куда я попадал. Минус один — до метро далеко.'},
+    {name:'Игорь', car:'Seat Leon', date:'3 марта 2026', text:'Фото каждого этапа в телеграм, снятые детали отдали, гарантию прописали в заказ-наряде.'}
+  ];
+  brands = ['Volkswagen','Audi','Škoda','Seat','Другая марка'];
+  componentDidMount(){ this.t = setInterval(()=>this.setState({now:new Date()}), 60000); }
+  componentWillUnmount(){ clearInterval(this.t); }
+  isOpen(){ const f = this.props.openState ?? 'auto'; if (f !== 'auto') return f === 'open'; const d = this.state.now; return d.getDay() !== 0 && d.getHours() >= 10 && d.getHours() < 21; }
+  renderVals(){
+    const s = this.state, open = this.isOpen(), sym = s.symptom >= 0 ? this.symptoms[s.symptom] : null;
+    const matched = sym ? sym.keys.map(k => this.services[k]) : [];
+    const chip = on => ({border: on ? '#14161A' : 'rgba(20,22,26,.14)', bg: on ? '#14161A' : '#fff', color: on ? '#fff' : '#14161A', on});
+    const brandChips = this.brands.map(b => ({name:b, ...chip(s.brand === b)}));
+    const symptomChips = this.symptoms.map((x,i) => ({label:x.label, hint:x.hint, ...chip(s.symptom === i)}));
+    const who = s.brand && s.brand !== 'Другая марка' ? ` для ${s.brand}` : '';
+    return {
+      brandChips, symptomChips, matched, steps:this.steps, cases:this.cases, featured:this.reviews[0], others:this.reviews.slice(1),
+      hasResult: !!sym, noResult: !sym,
+      resultTitle: sym ? `Обычно нужно${who}:` : 'Что обычно нужно и сколько стоит',
+      resultNote: sym ? sym.note : '',
+      ctaText: sym ? `Записаться: ${matched[0].name.toLowerCase()}` : 'Записаться',
+      formSubtitle: sym ? `${matched[0].name}${who}. Перезвоним в рабочий час, подтвердим цену и время.` : 'Перезвоним в рабочий час, назовём цену и подберём время.',
+      statusText: open ? 'Открыто до 21:00' : 'Закрыто · пн–сб с 10:00', statusColor: open ? '#2FA84F' : '#B4461E',
+      bookingOpen:s.bookingOpen, privacyOpen:s.privacyOpen, sent:s.sent, notSent:!s.sent, cookieVisible:(this.props.showCookieBar ?? true) && !s.cookie,
+      sentMsg:`Спасибо! Перезвоним ${open ? 'в течение 20 минут' : 'в ближайший рабочий час'}${sym ? ` по вопросу «${sym.label.toLowerCase()}»` : ''}.`,
+      setBrand: e => this.setState({brand:e.currentTarget.dataset.brand}),
+      setSymptom: e => { const i = +e.currentTarget.dataset.i; this.setState({symptom: s.symptom === i ? -1 : i}); },
+      openBooking: e => { e && e.preventDefault(); this.setState({bookingOpen:true, sent:false}); },
+      closeBooking: () => this.setState({bookingOpen:false}),
+      submitBooking: e => { e.preventDefault(); this.setState({sent:true}); },
+      openPrivacy: e => { e.preventDefault(); this.setState({privacyOpen:true}); },
+      closePrivacy: () => this.setState({privacyOpen:false}),
+      stop: e => e.stopPropagation(),
+      acceptCookies: () => this.setState({cookie:true}),
+      goTop: e => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+    };
+  }
+}
+</script>
+</body>
+</html>
